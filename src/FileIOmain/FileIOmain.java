@@ -1,13 +1,14 @@
 package FileIOmain;
 
 
-import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.Scanner;
 
 public class FileIOmain {
 
-    public static void main(String[] args) throws FileNotFoundException {
+    public static void main(String[] args) throws IOException {
         String filename = "groceries.txt", item;
 
          // file name and item variables
@@ -20,8 +21,11 @@ public class FileIOmain {
         // clear keyboard buffer
         keyboard.nextLine();
 
+        // create FileWriter object
+        FileWriter fwriter = new FileWriter(filename, true);
+
         //create and open file
-        PrintWriter outputFile = new PrintWriter(filename);
+        PrintWriter outputFile = new PrintWriter(fwriter);
 
         // get items and write to file
         for(int i = 0; i < numItems; i++) {
