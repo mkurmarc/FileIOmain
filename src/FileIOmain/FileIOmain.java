@@ -9,7 +9,7 @@ import java.util.Scanner;
 public class FileIOmain {
 
     public static void main(String[] args) throws IOException {
-        String filename = "groceries.txt", item;
+        String filename = "src/files/groceries2.txt", item;
 
          // file name and item variables
         Scanner keyboard = new Scanner(System.in);
@@ -20,6 +20,12 @@ public class FileIOmain {
 
         // clear keyboard buffer
         keyboard.nextLine();
+
+        /*
+        FileWriter notes:
+        - if no file exists to write to, then FWriter will create a new file automatically and
+        write to it.
+         */
 
         // create FileWriter object
         FileWriter fwriter = new FileWriter(filename, true);
